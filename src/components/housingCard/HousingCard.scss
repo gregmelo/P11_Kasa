@@ -1,0 +1,18 @@
+@use '../../utils/style/variables' as v;
+
+.housing-card {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  height: 255px;
+  width: 335px;
+  & p{
+    color: v.$white;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}

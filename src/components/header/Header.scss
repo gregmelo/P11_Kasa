@@ -1,0 +1,42 @@
+@use '../../utils/style/variables' as v;
+
+.nav-container {
+  margin: 45px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    margin: 20px;
+  }
+}
+
+.home-logo {
+  height: 68px;
+
+  @media (max-width: 768px) {
+    height: 47px;
+  }
+}
+
+.nav-link {
+  color: v.$black;
+  font-family: v.$montserrat;
+  font-weight: 500;
+  text-decoration: none;
+  padding-left: 57px;
+  font-size: 24px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.active {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    padding-left: 26px;
+    font-size: 12px;
+  }
+}
