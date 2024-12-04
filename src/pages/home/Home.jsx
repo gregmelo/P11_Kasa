@@ -9,6 +9,7 @@
 import BannerImg from '../../components/bannerImg/BannerImg';
 import logements from '../../data/logements';
 import HousingCard from '../../components/housingCard/HousingCard';
+import HomeBanner from '../../assets/home_banner.png'
 import './Home.scss';
 
 /**
@@ -19,7 +20,10 @@ import './Home.scss';
 function Home() {
   return (
     <div className="content">
-      <BannerImg title="Chez vous, partout et ailleurs" />
+      <BannerImg 
+      title="Chez vous, partout et ailleurs" 
+      imageSrc={HomeBanner}
+      />
       <div className="housing-container">
         {logements.map((logement) => (
           <HousingCard 

@@ -1,0 +1,55 @@
+@use '../../utils/style/variables' as v;
+
+.dropdown {
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: v.$salmon;
+  color: v.$white;
+  position: relative;
+  margin: 20px;
+  @media (min-width: 1024px) {
+    margin: 30px auto;
+    width: 1023px;
+  }
+}
+
+.dropdown-header {
+  padding: 14px 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-header h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  @media (min-width: 1024px) {
+    font-size: 24px;
+  }
+}
+
+.dropdown-content {
+  padding: 0 15px; /* Suppression du padding par défaut pour l'état fermé */
+  background-color: v.$backgroundColor;
+  color: v.$black;
+  max-height: 0; /* Contenu initialement caché */
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0; /* Contenu initialement invisible */
+}
+
+.dropdown-content.open {
+  padding: 10px 15px; /* Ajout du padding lorsque le contenu est visible */
+  opacity: 1;
+  max-height: 500px; /* Une hauteur suffisante pour contenir tout le contenu */
+}
+
+.chevron {
+  transition: transform 0.3s ease-in-out;
+}
+
+.chevron.rotate {
+  transform: rotate(180deg);
+}

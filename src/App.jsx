@@ -1,7 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
-import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
+import Layout from './pages/layout/Layout';
 import About from './pages/about/About';
 import Errors from './pages/errors/Errors';
 import Home from './pages/home/Home';
@@ -24,15 +23,15 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Layout/>}>
+          <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/housing/:id" element={<HousingDetails />} />
           <Route path="*" element={<Errors />} />
+          </Route>
         </Routes>
       </Router>
-      <Footer />
     </>
   );
 }

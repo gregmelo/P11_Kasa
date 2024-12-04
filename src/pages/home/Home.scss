@@ -20,6 +20,9 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  & a{
+    text-decoration: none;
+  }
   @media (min-width: 768px){
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
