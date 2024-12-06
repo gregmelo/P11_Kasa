@@ -9,7 +9,7 @@
 
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import './housingCard.scss';
+import './HousingCard.scss';
 
 /**
  * Fonction principale du composant HousingCard.
