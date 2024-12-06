@@ -15,7 +15,7 @@ import './Errors.scss';
  * 
  * @returns {JSX.Element} - Un composant contenant un message d'erreur, un code d'erreur, et un lien de redirection vers la page d'accueil.
  */
-function Errors() {
+export default function Errors() {
   return (
     <div className="not-found">
       <h1>404</h1>
@@ -24,5 +24,3 @@ function Errors() {
     </div>
   );
 }
-
-export default Errors;

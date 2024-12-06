@@ -1,0 +1,27 @@
+@use "../../utils/style/variables" as v;
+
+.star-rating {
+  display: flex;
+  gap: 0.2rem;
+  
+  .star-filled {
+    color: v.$salmon; // Couleur saumon pour les étoiles remplies
+    height: 18px;
+    width: 18px;
+    @media (min-width: 1024px) {
+      height: 36px;
+      width: 36px;
+    }
+  }
+
+  .star-empty {
+    color: #e3e3e3; // Couleur grise pour les étoiles vides
+    fill: #e3e3e3;
+    height: 18px;
+    width: 18px;
+    @media (min-width: 1024px) {
+      height: 36px;
+      width: 36px;
+    }
+  }
+}

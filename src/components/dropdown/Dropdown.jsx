@@ -21,7 +21,15 @@ export default function Dropdown({ title, description }) {
         />
       </div>
       <div className={`dropdown-content ${isOpen ? "open" : ""}`}>
-        <p>{description}</p>
+      {Array.isArray(description) ? (
+          <ul>
+            {description.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>{description}</p>
+        )}
       </div>
     </div>
   );
@@ -29,5 +37,8 @@ export default function Dropdown({ title, description }) {
 
 Dropdown.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
 };

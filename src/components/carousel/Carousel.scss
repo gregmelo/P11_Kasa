@@ -1,0 +1,73 @@
+@use "../../utils/style/variables" as v;
+
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 255px;
+  @media (min-width: 1024px) {
+    height: 415px;
+    width: 1240px;
+  }
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  @media (min-width: 1024px) {
+    border-radius: 25px;
+  }
+}
+
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  background-color: transparent;
+  transform: translateY(-50%);
+  color: v.$white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 20px;
+  width: 12px;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+  @media (min-width: 1024px) {
+    right: 60px
+  }
+}
+
+.chevron-carousel{
+  height: 20px;
+  width: 12px;
+  @media (min-width: 1024px) {
+    height: 79px;
+    width: 46px;
+    top: 0%;
+    position: absolute;
+  }
+}
+
+.carousel-indicator {
+  display: none;
+  @media (min-width: 1024px) {
+    display: inline;
+    position: absolute;
+    bottom: 25px;
+    color: v.$white;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}

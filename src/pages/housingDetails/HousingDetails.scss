@@ -1,0 +1,103 @@
+@use "../../utils/style/variables" as v;
+
+.housing-details{
+  max-width: 375px;
+  margin: 0 20px;
+  
+  @media (min-width: 1024px){
+    max-width: 1240px;
+    margin: 0 100px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.housing-details-title{
+  margin-bottom: 10px;
+  @media (min-width: 1024px){
+    margin-bottom: 20px;
+  }
+  h1{
+    color: v.$salmon;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 5px;
+    @media (min-width: 1024px){
+      font-size: 36px;
+      font-weight: 500;
+    }
+  }
+  p{
+    margin-top: 0;
+    color: v.$black;
+    font-weight: 500;
+    font-size: 14px;
+    @media (min-width: 1024px){
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+}
+.housing-details-content{
+  @media (min-width: 1024px){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1240px;
+  }
+}
+
+.housing-details-infos{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @media (min-width: 1024px){
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: center;
+  }
+.host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    img{
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      @media (min-width: 1024px){
+        width: 64px;
+        height: 64px;
+      }
+    }
+    p{
+      color: v.$salmon;
+      font-weight: 500;
+      font-size: 12px;
+      width: 63px;
+      text-align: right;
+      @media (min-width: 1024px){
+        font-size: 18px;
+        width: 100%;
+      }
+    }
+}
+
+}
+
+.housing-dropdowns {
+  @media (min-width: 1024px){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+
+.housing-dropdowns .dropdown{
+  margin: 20px 0;
+  @media (min-width: 1024px){
+    width: 582px;
+  }
+}
