@@ -19,7 +19,8 @@ import './utils/style/global.scss';
  * 
  * @returns {JSX.Element} Le composant principal de l'application avec le routage et l'affichage des pages.
  */
-function App() {
+
+export default function App() {
   return (
     <>
       <Router>
@@ -35,5 +36,3 @@ function App() {
     </>
   );
 }
-
-export default App; // Exportation du composant App pour qu'il soit utilisé dans d'autres parties de l'application.
