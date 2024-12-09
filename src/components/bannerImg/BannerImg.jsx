@@ -11,7 +11,7 @@ import "./bannerImg.scss";
  * @param {string} props.imageSrc - L'URL de l'image de la bannière.
  * @returns {JSX.Element} Le composant de la bannière.
  */
-function BannerImg({ title, imageSrc }) {
+export default function BannerImg({ title, imageSrc }) {
   return (
     <div 
       className="banner-img" 
@@ -31,5 +31,3 @@ BannerImg.propTypes = {
   title: PropTypes.string, // La prop 'title' est de type string et est optionnelle.
   imageSrc: PropTypes.string.isRequired, // La prop 'imageSrc' est obligatoire et doit être une chaîne de caractères.
 };
-
-export default BannerImg;

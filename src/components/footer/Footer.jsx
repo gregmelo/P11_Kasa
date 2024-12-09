@@ -9,7 +9,7 @@ import './Footer.scss'; // Import du fichier SCSS
  * 
  * @returns {JSX.Element} Le composant du pied de page.
  */
-function Footer() {
+export default function Footer() {
   return (
     <footer className="footer-container">
       <img className="footer-image" src={logo_footer} alt="Kasa logo" />
@@ -17,5 +17,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer; // Exportation du composant Footer pour qu'il soit utilisé dans d'autres parties de l'application.

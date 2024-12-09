@@ -20,7 +20,7 @@ import './HousingCard.scss';
  * @param {string} props.img - L'URL de l'image représentant le logement.
  * @returns {JSX.Element} - Une carte de logement cliquable avec une image de fond et un titre.
  */
-function HousingCard({ id, title, img }) {
+export default function HousingCard({ id, title, img }) {
     return (
         <Link to={`/housing/${id}`}>
             <article 
@@ -49,5 +49,3 @@ HousingCard.propTypes = {
      */
     img: PropTypes.string.isRequired,
 };
-
-export default HousingCard;

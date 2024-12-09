@@ -11,7 +11,7 @@ import './Header.scss'; // Importation des styles spécifiques au composant Head
  * 
  * @returns {JSX.Element} Le composant de la barre de navigation.
  */
-function Header() {
+export default function Header() {
   return (
     <nav className="nav-container">
       {/* Lien vers la page d'accueil avec le logo cliquable */}
@@ -40,5 +40,3 @@ function Header() {
     </nav>
   );
 }
-
-export default Header; // Exportation du composant Header pour qu'il soit utilisé dans d'autres parties de l'application.

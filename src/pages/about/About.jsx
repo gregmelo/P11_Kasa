@@ -3,46 +3,64 @@ import AboutBanner from "../../assets/about_banner.png";
 import Dropdown from "../../components/dropdown/Dropdown";
 
 /**
- * Composant React représentant la page "À propos".
+ * Composant About
  * 
- * Ce composant affiche un titre et un paragraphe décrivant la page "À propos".
+ * Ce composant représente la page "À propos" et affiche une bannière ainsi qu'une liste de sections 
+ * déroulantes contenant des descriptions des valeurs et engagements de la plateforme.
  * 
- * @returns {JSX.Element} Un élément JSX contenant un titre et un paragraphe.
+ * @module About
  */
 
+/**
+ * Données des sections déroulantes.
+ * 
+ * Chaque objet représente une section avec un titre et une description associée, 
+ * expliquant les valeurs fondamentales de Kasa.
+ * 
+ * @constant {Array<Object>}
+ */
 const dropdowns_description = [
   {
-    title : "Fiabilité", 
-    description : "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."
+    title: "Fiabilité", 
+    description: "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."
   },
   {
-    title : "Respect", 
-    description : "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."
+    title: "Respect", 
+    description: "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."
   },
   {
-    title : "Service", 
-    description : "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."
+    title: "Service", 
+    description: "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."
   },
   {
-    title : "Sécurité", 
-    description : "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."
+    title: "Sécurité", 
+    description: "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."
   },
-]
+];
 
-
-function About() {
+/**
+ * Fonction principale du composant About.
+ * 
+ * Cette fonction génère la page "À propos", avec une bannière en haut et une liste de composants `Dropdown` 
+ * affichant les descriptions des valeurs fondamentales de Kasa.
+ * 
+ * @returns {JSX.Element} - Un composant représentant la page "À propos".
+ */
+export default function About() {
   return (
     <div>
-      {/* <Header /> */}
+      {/* Affiche une bannière avec une image */}
       <BannerImg imageSrc={AboutBanner} />
+      {/* Conteneur pour les sections déroulantes */}
       <div className="dropdown-container">
-      {dropdowns_description.map((item, index) => (
-          <Dropdown key={index} title={item.title} description={item.description} />
+        {dropdowns_description.map((item, index) => (
+          <Dropdown 
+            key={index} // Clé unique basée sur l'index.
+            title={item.title} // Titre de la section.
+            description={item.description} // Description associée au titre.
+          />
         ))}
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }
-
-export default About;

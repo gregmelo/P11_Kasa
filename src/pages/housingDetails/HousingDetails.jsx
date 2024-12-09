@@ -7,14 +7,28 @@ import Carousel from '../../components/carousel/Carousel';
 import Errors from '../errors/Errors';
 import './HousingDetails.scss';
 
-export default function HousingDetails() {
-  const { id } = useParams();
-  const logement = logements.find((item) => item.id === id);
+/**
+ * Composant affichant les détails d'un logement.
+ * 
+ * Ce composant récupère l'identifiant du logement depuis les paramètres d'URL,
+ * recherche le logement correspondant dans les données, et affiche ses informations
+ * détaillées, y compris les images, les tags, la notation, et les équipements.
+ * 
+ * Si le logement n'est pas trouvé, le composant redirige vers une page d'erreur.
+ * 
+ * @returns {JSX.Element} Le composant JSX représentant les détails d'un logement ou une page d'erreur.
+ */
 
+export default function HousingDetails() {
+  const { id } = useParams(); // Récupère l'identifiant du logement depuis l'URL.
+  const logement = logements.find((item) => item.id === id); // Recherche le logement correspondant.
+
+  // Si le logement n'est pas trouvé, affiche une page d'erreur.
   if (!logement) {
     return <Errors />;
   }
 
+  // Affiche les détails du logement.
   return (
     <div className="housing-details">
       <Carousel images={logement.pictures} />
@@ -36,18 +50,18 @@ export default function HousingDetails() {
       </div>
       <div className="housing-dropdowns">
         <div>
-        <Dropdown 
-          key={`${logement.id}-description`} 
-          title="Description" 
-          description={logement.description} 
-        />
+          <Dropdown 
+            key={`${logement.id}-description`} 
+            title="Description" 
+            description={logement.description} 
+          />
         </div>
         <div>
-        <Dropdown 
-          key={`${logement.id}-equipments`} 
-          title="Équipements" 
-          description={logement.equipments} 
-        />
+          <Dropdown 
+            key={`${logement.id}-equipments`} 
+            title="Équipements" 
+            description={logement.equipments} 
+          />
         </div>
       </div>
     </div>
