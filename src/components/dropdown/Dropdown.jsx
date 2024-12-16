@@ -2,7 +2,7 @@ import "./Dropdown.scss";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Composant Dropdown
@@ -35,7 +35,7 @@ export default function Dropdown({ title, description }) {
       <div className="dropdown-header" onClick={toggleDropdown}>
         <h3>{title}</h3>
         <FontAwesomeIcon
-          icon={faChevronDown}
+          icon={faChevronUp}
           className={`chevron ${isOpen ? "rotate" : ""}`}
         />
       </div>
